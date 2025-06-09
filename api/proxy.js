@@ -14,6 +14,6 @@ module.exports = async (req, res) => {
     res.setHeader("Content-Type", "text/html; charset=utf-8");
     res.status(200).send(text);
   } catch (err) {
-    res.status(500).json({ error: "Fetch failed" });
+    res.status(500).json({ error: err.toString() }); // エラー内容を返す
   }
 };
